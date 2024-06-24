@@ -11,7 +11,7 @@ def filter_data(df, gender, seat_type, quota, rank):
         (df['Gender'] == gender) &
         (df['Seat Type'] == seat_type) &
         (df['Quota'] == quota) &
-        (df['Opening Rank'] <= rank) &
+        # (df['Opening Rank'] <= rank) &
         (df['Closing Rank']>= rank)
     ]
     return filtered_df
@@ -29,7 +29,7 @@ st.title('AeduZ College Finder (Yearwise)')
 st.sidebar.title('Filters')
 
 # User inputs in the sidebar
-year = st.sidebar.selectbox('Select Year', [2020,2021,2022,2023])
+year = st.sidebar.selectbox('Select Year', [2020,2021,2022,2023,2024])
 college=st.sidebar.selectbox('Select college',["IIT","NIT"])
 round_num = st.sidebar.selectbox('Select Round:', [1, 2, 3, 4, 6])
 gender = st.sidebar.selectbox('Select Gender:', ['Gender-Neutral', 'Female-only (including Supernumerary)'])
